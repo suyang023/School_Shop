@@ -1,6 +1,5 @@
 from flask_wtf import FlaskForm, Form
 from wtforms import StringField, PasswordField, SubmitField, RadioField,BooleanField
-# from wtforms.validators import DataRequired
 from wtforms import validators, widgets, ValidationError
 from app.models import User
 
@@ -36,8 +35,6 @@ class RegistForm(FlaskForm):
             validators.DataRequired(message='密码不能为空.'),
             validators.EqualTo('pwd', message="两次密码不是一致！"),
             validators.Length(min=6, message='用户名长度必须大于%(min)d'),
-            # validators.Regexp(regex="^(?=.*[a-z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,}",
-            #                   message='密码至少8个字符，至少1个大写字母，1个小写字母，1个数字和1个特殊字符')
             validators.Regexp(regex="^(?=.*[A-Za-z])(?=.*\d){6,}",
                               message='密码至少6个字符，1个大小写字母和1个数字符')
         ],
@@ -84,9 +81,6 @@ class LoginFrom(FlaskForm):
         validators=[
             validators.DataRequired("请输入密码！."),
             validators.DataRequired(message='密码不能为空.'),
-            # validators.Length(min=8, message='用户名长度必须大于%(min)d'),
-            # validators.Regexp(regex="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}",
-            #                   message='密码至少8个字符，至少1个大写字母，1个小写字母，1个数字和1个特殊字符')
         ],
         widget=widgets.PasswordInput(),
         render_kw={'class': 'loginuserpassword', "placeholder": "请输入密码！"}
