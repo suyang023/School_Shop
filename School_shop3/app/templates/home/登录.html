@@ -1,0 +1,94 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>登陆</title>
+<link href="{{ url_for('static',filename = 'home/css/base.css')}}" rel="stylesheet" type="text/css">
+<link href="{{ url_for('static',filename = 'home/css/css.css')}}" rel="stylesheet" type="text/css">
+<script src="{{ url_for('static',filename = 'home/js/jquery-2.1.1.min.js')}}"></script>
+<style>
+.tab {
+	overflow: hidden;
+	margin-top: 20px; margin-bottom:-1px;
+}
+.tab li {
+	display: block;
+	float: left;
+	width: 100px;padding:10px 20px; cursor:pointer; border:1px solid #ccc; 
+}
+.tab li.on {
+	background: #90B831; color:#FFF;padding:10px 20px;
+}
+.conlist {padding:30px; border:1px solid #ccc; width:300px;}
+.conbox {
+	display: none;
+}
+</style>
+<script>
+$(function(){
+	$(".tab li").each(function(i){
+		$(this).click(function(){
+		$(this).addClass("on").siblings().removeClass("on");
+		$(".conlist .conbox").eq(i).show().siblings().hide();
+		})
+	})
+})
+</script>
+</head>
+
+<body>
+<div class="login-top">
+    <div class="wrapper">
+        <div class="fl font30">LOGO</div>
+        <div class="fr">您好，欢迎为生活充电在线！<a href="{{ '/'}}" class="green">首页</a></div>
+    </div>
+</div>
+<div class="l_main">
+    <div class="l_bttitle2"> 
+        <!-- <h2>登录</h2>-->
+        <h2><a href="#">< 返回首页</a></h2>
+    </div>
+    <div class="loginbox fl">
+        <div class="tab">
+            <ul>
+                <li class="on">欢迎登录</li>
+                <!--<li>我是卖家</li>-->
+            </ul>
+        </div>
+        <div class="conlist">
+            <div class="conbox" style="display:block;">
+                <form method="post">
+                    {% for msg in get_flashed_messages() %}
+                       <p style="color: red">{{ msg }}</p>
+                    {% endfor %}
+                <p>
+                    <!--<input type="text" class="loginusername" name="username">-->
+                    {{ form.account() }}
+                    {% for err in form.account.errors %}
+                        <div><font style="color: red">{{ err }}</font></div>
+                    {% endfor %}
+                </p>
+                <p>
+                    <!--<input type="password" class="loginuserpassword" name="password">-->
+                    {{ form.pwd() }}
+                    {% for err in form.pwd.errors %}
+                        <div><font style="color: red">{{ err }}</font></div>
+                    {% endfor %}
+                </p>
+                <p><span class="fl fntz14 margin-t10"><a href="{{ url_for('home.logup')}}" style="color:#ff6000">立即注册</a></span><span class="fr fntz12 margin-t10"><a href="#">忘记密码？</a></span></p>
+                    <br/>
+                    <p>
+                    <!--<input type="submit" class="loginbtn" value="登  录">-->
+                        {{ form.submit() }}
+                        {{ form.csrf_token }}
+                     </p>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="fr margin-r100 margin-t45"><img src="{{ url_for('static',filename = 'home/images/login-pic.jpg')}}" width="507" height="325"></div>
+</div>
+</body>
+</html>

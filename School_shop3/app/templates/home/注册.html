@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>注册</title>
+    <link href="{{ url_for('static',filename = 'home/css/css.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static',filename = 'home/css/base.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static',filename = 'home/jquery-labelauty.css')}}" rel="stylesheet" type="text/css">
+    <script src="{{ url_for('static',filename = 'home/js/jquery-2.1.1.min.js')}}"></script>
+    <!--<script src="{{ url_for('static',filename = 'home/js/jquery-labelauty.js')}}"></script>-->
+
+<style>
+.tab {
+	overflow: hidden;
+	margin-top: 20px; margin-bottom:-1px;
+}
+.tab li {
+	display: block;
+	float: left;
+	width: 100px;padding:10px 20px; cursor:pointer; border:1px solid #ccc; 
+}
+.tab li.on {
+	background: #90B831; color:#FFF;padding:10px 20px;
+}
+.conlist {padding:30px; border:1px solid #ccc; width:300px;}
+.conbox {
+	display: none;
+}
+    ul { list-style-type: none;}
+    li { display: inline-block;}
+    li { margin: 10px 0;}
+    input.labelauty + label { font: 12px "Microsoft Yahei";}
+</style>
+<script>
+    $(function(){
+        $(".tab li").each(function(i){
+            $(this).click(function(){
+            $(this).addClass("on").siblings().removeClass("on");
+            $(".conlist .conbox").eq(i).show().siblings().hide();
+            })
+        })
+    $(function(){
+	    $(':input').labelauty();
+    });
+})
+</script>
+</head>
+
+<body class="l-bg">
+<div class="login-top">
+    <div class="wrapper">
+        <div class="fl font30">LOGO</div>
+        <div class="fr">您好，欢迎为生活充电在线！<a href="{{ 'login'}}" class="green">请登录</a></div>
+    </div>
+</div>
+<div class="l_main2">
+    <div class="l_bttitle"> 
+        <h2>注册</h2>
+    </div>
+    <div class="loginbox">
+        <div class="tab">
+            <ul>
+                <li class="on">欢迎注册</li>
+                <!--<li>我是卖家</li>-->
+            </ul>
+        </div>
+        <div class="conlist">
+            <form method="post">
+            <!--<div class="conbox" style="display:block;">-->
+                <p>
+                    <!--<div class="fl res-text">用&nbsp;户&nbsp;名：</div><div><input type="text" class="loginuser"name='username'></div>-->
+                <div class="fl res-text">{{ form.name.label }}</div><div>{{ form.name }}</div>
+                    {% for err in form.name.errors %}
+                    <div><font style="color: red">{{ err }}</font></div>
+                    {% endfor %}
+                </p>
+                <p>
+                   <div class="fl res-text">{{ form.pwd.label }}</div><div>{{ form.pwd }}</div>
+                    {% for err in form.pwd.errors %}
+                    <div><font style="color: red">{{ err }}</font></div>
+                    {% endfor %}
+                </p>
+                <p>
+                   <div class="fl res-text">{{ form.repwd.label }}</div><div>{{ form.repwd }}</div>
+                    {% for err in form.repwd.errors %}
+                    <div><font style="color: red">{{ err }}</font></div>
+                    {% endfor %}
+                </p>
+                <p>
+                    <br/>
+                    请选择属于您的喜好标签？<br /><br />
+                        {{ form.select1 }}潮流达人
+                        {{ form.select2 }}居家生活
+                        {{ form.select3 }}美食达人
+                        <!--<label><input name="Fruit1" type="checkbox" value="潮流达人" />潮流达人 </label>-->
+                        <!--<label><input name="Fruit2" type="checkbox" value="居家生活" />居家生活 </label>-->
+                        <!--<label><input name="Fruit3" type="checkbox" value="美食达人" />美食达人</label>-->
+                        <!--<label><input name="Fruit" type="checkbox" value="" />梨 </label>-->
+                <!--<ul class="dowebok">-->
+                        <!--&lt;!&ndash;<li><input type="checkbox" name="checkbox" disabled checked data-labelauty="HTML"></li>&ndash;&gt;-->
+	                    <!--<li><input type="checkbox" name="checkbox" data-labelauty="CSS"></li>-->
+	                    <!--<li><input type="checkbox" name="checkbox" data-labelauty="JavaScript"></li>-->
+                        <!--<li><input type="checkbox" name="checkbox" data-labelauty="CSS"></li>-->
+	                    <!--<li><input type="checkbox" name="checkbox" data-labelauty="JavaScript"></li>-->
+                <!--</ul>-->
+                </p>
+                <p>
+                    <!--<input type="submit" class="loginbtn" value="注  册">-->
+                    {{ form.csrf_token }}
+                    {{ form.submit }}
+                </p>
+            <!--</div>-->
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
