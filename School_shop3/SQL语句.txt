@@ -1,0 +1,48 @@
+sql语句一：
+INSERT INTO shops (id,shop_name,money_m,money_c)VALUES(null,"超短裤",350,125);
+INSERT INTO shops (id,shop_name,money_m,money_c)VALUES(null,"羊角豆腐",15,10);
+INSERT INTO shops (id,shop_name,money_m,money_c)VALUES(null,"飞科刮胡刀",3.5,2.5);
+INSERT INTO shops (id,shop_name,money_m,money_c)VALUES(null,"垃圾袋",10,2.5);
+INSERT INTO shops (id,shop_name,money_m,money_c)VALUES(null,"衣架",35,25);
+INSERT INTO shops (id,shop_name,money_m,money_c)VALUES(null,"凉鞋",75,55);
+
+
+
+
+INSERT INTO leibies (id,leibie_name,leibie_id)VALUES(null,"服装",2);
+
+
+
+delete from leibies where id=1
+
+sql语句二：
+
+INSERT INTO admins (id,name,pwd)VALUES(null,'admin','admin');
+
+
+INSERT INTO Usershops (id,user,shop_name,number,money,image_url)VALUES(null,'user','鹅毛',1,350.0,null);
+
+INSERT INTO leibies (id,leibie_name)VALUES(null,"服装");
+INSERT INTO leibies (id,leibie_name)VALUES(null,"居家");
+INSERT INTO leibies (id,leibie_name)VALUES(null,"美食");
+
+INSERT INTO shops (id,leibie_id,shop_name,money_m,money_c,image_url)VALUES(null,1,"乐事 无限薯片三连装（原味+番茄+烤肉）104g*3/组",23.00,125,'products/p_15.jpg');
+INSERT INTO shops (id,leibie_id,shop_name,money_m,money_c,image_url)VALUES(null,1,"烤鳗鱼海鲜零食小鱼干香辣",13.50,125,'products/60038730.webp');
+INSERT INTO shops (id,leibie_id,shop_name,money_m,money_c,image_url)VALUES(null,1,"骥洋烤奥尔良风味鸡翅真空",6.50,125,'products/42976212.webp');
+INSERT INTO shops (id,leibie_id,shop_name,money_m,money_c,image_url)VALUES(null,1,"日本进口泉屋扁桃仁虾干杏",33.50,125,'products/T1qJdWFL.webp');
+INSERT INTO shops (id,leibie_id,shop_name,money_m,money_c,image_url)VALUES(null,2,"LaDeTiNa新秀单头半自动咖啡机专业意式咖啡机商用咖啡机红色银色",33800.00,125,'products/23182928.jpg');
+INSERT INTO shops (id,leibie_id,shop_name,money_m,money_c,image_url)VALUES(null,2,"德国美诺咖啡机CVA 6800/6805米勒嵌入式咖啡机包邮包税",16799.00,125,'products/59531360.jpg');
+INSERT INTO shops (id,leibie_id,shop_name,money_m,money_c,image_url)VALUES(null,2,"浮裸眼3d box超多维SuperD智能高科技一体机vr手机虚拟现实wifi",1999.00,125,'products/581301476.jpg');
+INSERT INTO shops (id,leibie_id,shop_name,money_m,money_c,image_url)VALUES(null,2,"包邮 韩国专柜最新采购 CLIO珂莱欧 渐变指甲油 快干持久 225",230.00,125,'products/TB1t9g.jpg');
+INSERT INTO shops (id,leibie_id,shop_name,money_m,money_c,image_url)VALUES(null,3,"精梳棉宽松牛仔外套",398.00,125,'products/323983217.jpg.webp');
+INSERT INTO shops (id,leibie_id,shop_name,money_m,money_c,image_url)VALUES(null,3,"韩都衣舍2017韩版女冬装新款显瘦chic连帽大毛领牛仔棉衣RW6879瑒装",401.00,125,'products/TB1vA2QghS.webp');
+INSERT INTO shops (id,leibie_id,shop_name,money_m,money_c,image_url)VALUES(null,3,"2017年新款冬季带帽加厚保暖牛仔外套女宽松款BF风可拆棉里上衣潮",230.00,125,'products/TB2sYXqf3L.webp');
+INSERT INTO shops (id,leibie_id,shop_name,money_m,money_c,image_url)VALUES(null,3,"To M潮秋冬新品国潮风自制款oversize嘻哈宽松金丝绒棉衣棉服外套",335.00,125,'products/1098070206.webp');
+INSERT INTO shops (id,leibie_id,shop_name,money_m,money_c,image_url)VALUES(null,4,"墨西哥原装进口",398.00,125,'products/p_32.jpg');
+INSERT INTO shops (id,leibie_id,shop_name,money_m,money_c,image_url)VALUES(null,4,"科罗娜啤酒",401.00,125,'products/p_33.jpg');
+INSERT INTO shops (id,leibie_id,shop_name,money_m,money_c,image_url)VALUES(null,4,"梅子酒",335.00,125,'products/p_37.jpg');
+INSERT INTO shops (id,leibie_id,shop_name,money_m,money_c,image_url)VALUES(null,4,"伏特加酒",230.00,125,'products/p_39.jpg');
+
+
+
+
