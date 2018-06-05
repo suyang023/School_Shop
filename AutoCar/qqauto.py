@@ -24,9 +24,10 @@ def onQQMessage(bot, contact, member, content):
             bot.SendTo(b, 'QQ机器人已关闭')
             # bot.SendTo(contact, 'QQ机器人已关闭')
             bot.Stop()
-    time.sleep(0.1)
+        elif i>len(username):
+            break
+        time.sleep(0.1)
 
 
 if __name__ == '__main__':
     RunBot()
-
