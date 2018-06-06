@@ -31,3 +31,4 @@ def onQQMessage(bot, contact, member, content):
 
 if __name__ == '__main__':
     RunBot()
+#0606已修改
