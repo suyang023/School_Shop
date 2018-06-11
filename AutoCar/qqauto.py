@@ -5,12 +5,16 @@ import time
 @qqbotslot
 def onQQMessage(bot, contact, member, content):
     username = ['重庆顺风车发单1群']
+    chengkename = ['重庆顺风车拼车1群']
     # username = ['laoda']
     ps = '\nPS:需要长期固定区域接单的司机请私聊群主接单！'
 
     for i in range(0, len(username)):
         user = username[i]
+        #司机群
         b1 = bot.List('group', user)
+        #乘客群
+        b2 = bot.List('group', chengkename)
         # b1 = bot.List('buddy', user)
         if content.find('人找车') != -1:
 
@@ -27,11 +31,11 @@ def onQQMessage(bot, contact, member, content):
                 bot.SendTo(b, content2+ps)
             # bot.SendTo(contact, '你好，我是QQ机器人')
 
-        # elif content.find('车找人') != -1:
-        #     content2 = content.replace('车找人','车-找-人')
-        #     if b1:
-        #         b = b1[0]
-        #     bot.SendTo(b, content2+ps)
+        elif content.find('车找人') != -1:
+            content2 = content.replace('车找人','车-找-人')
+            if b2:
+                b = b2[0]
+            bot.SendTo(b, content2)
             
 
         elif content == '-测试-':
