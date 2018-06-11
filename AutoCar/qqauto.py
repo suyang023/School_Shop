@@ -5,7 +5,7 @@ import time
 @qqbotslot
 def onQQMessage(bot, contact, member, content):
     username = ['重庆顺风车发单1群']
-    chengkename = ['重庆顺风车拼车1群']
+    chengkename = '重庆顺风车拼车1群'
     # username = ['laoda']
     ps = '\nPS:需要长期固定区域接单的司机请私聊群主接单！'
 
