@@ -13,14 +13,16 @@ wait = WebDriverWait(browser, 10)
 num = 0
 
 
-def cqzb_gov(url):
+def cqzb_gov():
     try:
         # print('测试2！')
         star1_title_dict_1 = []
         star1_title_dict_2 = []
-        i = 1
+        all = 1
+
         while (1):
-            print('第%d次循环！！！' % i)
+            url = 'http://www.cqzb.gov.cn/class-5-1.aspx'
+            print('第%d次循环！！！' % all)
             browser.get(url)
 
             for i in range(1, 21):
@@ -70,7 +72,7 @@ def cqzb_gov(url):
             star1_title_dict_2.clear()
 
             time.sleep(60)
-        i += 1
+            all += 1
     except TimeoutException:
 
         cqzb_gov()
@@ -308,5 +310,5 @@ def main_2():
 
 
 if __name__ == '__main__':
-    cqzb_gov('http://www.cqzb.gov.cn/class-5-1.aspx')
+    cqzb_gov()
     # main_2()
