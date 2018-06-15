@@ -18,9 +18,9 @@ def cqzb_gov(url):
         # print('测试2！')
         star1_title_dict_1 = []
         star1_title_dict_2 = []
-
-        while(1):
-
+        i = 1
+        while (1):
+            print('第%d次循环！！！' % i)
             browser.get(url)
 
             for i in range(1, 21):
@@ -56,20 +56,21 @@ def cqzb_gov(url):
             cha_value = star1_title_dict_2_set.difference(star1_title_dict_1_set)
 
             for i in range(len(cha_value)):
-
                 cha_value_pop = cha_value.pop()
                 print(cha_value_pop)
 
                 masgee_2(cha_value_pop)
 
-            del star1_title_dict_1
+            star1_title_dict_1.clear()
 
             for i in range(len(star1_title_dict_2)):
-                star1_title_dict_1.append(star1_title_dict_2[i])
+                a = star1_title_dict_2[i]
+                star1_title_dict_1.append(a)
 
-            del star1_title_dict_2
+            star1_title_dict_2.clear()
 
             time.sleep(60)
+        i += 1
     except TimeoutException:
 
         cqzb_gov()
