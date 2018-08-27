@@ -66,7 +66,7 @@ while(1):
 		a = 0
 		while (1):
 			a+=1
-			if a == 2:
+			if a == 1:
 				time.sleep(5)
 				# driver.find_element_by_class_name('android.widget.ImageView').click()
 				driver.find_element_by_id('com.smile.gifmaker:id/forward_button_extra').click()
@@ -131,7 +131,8 @@ while(1):
 			pass
 			
 	#向下滑动
-	swipe_up()			
+	swipe_up()	
+	print("主界面滑动")		
 
 # for i in range(len(num)):
 # 	num_data = num[i].text
