@@ -76,7 +76,7 @@ def onQQMessage(bot, contact, member, content):
                 for z in qun_name_1:
                     if z == contact.name:
                         print(contact.name)
-                        divername = ['氵', '巴渝山', '客户1--胡雅力']
+                        divername = ['氵', '巴渝山']
                         for a in range(0, len(divername)):
                             username = divername[a]
                             # 司机用户组
@@ -87,7 +87,7 @@ def onQQMessage(bot, contact, member, content):
                 for z in qun_name_2:
                     if z == contact.name:
                         print(contact.name)
-                        divername = ['氵', '巴渝山', '客户1--胡雅力']
+                        divername = ['氵', '巴渝山']
                         for a in range(0, len(divername)):
                             username = divername[a]
                             # 司机用户组
